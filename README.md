@@ -4,8 +4,7 @@
 Описание проекта
 ----------
 
-Проект «Cервис управления рассылками API администрирования и получения статистики» создан в рамках тестового задания для кандидатов-разработчиков. Проект состоит из проектируемого API сервиса для работы с данными клиентов, управления рассылками сообщений и отдельного скрипта для автоматической рассылки сообщений согласно согласно ТЗ. API сервис реализуется на базе фреймворка DRF, скрипт запускается отдельно от проектируемого API и работает циклически.
-
+Проект «Cервис управления рассылками API администрирования и получения статистики» создан в рамках тестового задания для кандидатов-разработчиков. Проект состоит из проектируемого API сервиса для работы с данными клиентов, управления рассылками сообщений. API сервис реализуется на базе фреймворка DRF.
 
 Системные требования
 ----------
@@ -30,70 +29,54 @@
 
 Установка проекта из репозитория (Linux и macOS)
 ----------
-
 1. Клонировать репозиторий и перейти в него в командной строке:
+```bash 
+git clone git@github.com:NikitaChalykh/API_Mailings_TW.git
 
-```bash
-git clone 'https://github.com/NikitaChalykh/test_work.git'
+cd API_Mailings_TW
 ```
 
-```bash
-cd test_work
+2. Cоздать и открыть файл ```.env``` с переменными окружения:
+```bash 
+cd infra
+
+touch .env
 ```
 
-2. Cоздать и активировать виртуальное окружение:
+3. Заполнить ```.env``` файл с переменными окружения по примеру:
+```bash 
+echo DB_ENGINE=django.db.backends.postgresql >> .env
 
-```bash
-python3 -m venv venv
+echo DB_NAME=postgres >> .env
+
+echo POSTGRES_PASSWORD=postgres >> .env
+
+echo POSTGRES_USER=postgres >> .env
+
+echo DB_HOST=db >> .env
+
+echo DB_PORT=5432 >> .env
+
+echo BROKER=redis://redis >> .env
+
+echo BROKER_URL=redis://redis:6379/0 >> .env
 ```
 
-```bash
-source venv/bin/activate
+4. Установка и запуск приложения в контейнерах:
+```bash 
+docker-compose up -d
 ```
 
-3. Установить зависимости из файла requirements.txt:
+5. Запуск миграций, сбор статики, загрузка фикстур и запуск тестов:
+```bash 
+docker-compose exec web python manage.py migrate
 
-```bash
-python3 -m pip install --upgrade pip
+docker-compose exec web python manage.py collectstatic --no-input 
+
+docker-compose exec web python manage.py loaddata fixtures.json
+
+docker-compose exec web python manage.py test 
 ```
-
-```bash
-pip install -r requirements.txt
-```
-
-4. Выполнить миграции для API:
-
-```bash
-python3 manage.py makemigration
-```
-
-```bash
-python3 manage.py migrate
-```
-
-5. Запустить проект API (в режиме сервера Django):
-
-```bash
-python3 manage.py runserver
-```
-
-6. Получить JWT-токен сервера API управления рассылками (зарегистристриваться):
-
-```bash
-7. Создать файл виртуального окружения с токеном API сервиса управления рассылками и с токеном сервиса отправки сообщений:
-```
-
-8. Запустить скрипт api_script.py для автоматической рассылки сообщений согласно дате начала и окончания рассылки:
-
-```bash
-python3 api_script.py
-```
-
 Документация к проекту
 ----------
-
-Документация по методам API доступна по адресу:
-
-```bash
-/docs/"
-```
+Документация для API после установки доступна по адресу ```/redoc/```, ```/swagger/```.
