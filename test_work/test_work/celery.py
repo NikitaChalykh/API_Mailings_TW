@@ -24,6 +24,6 @@ app.autodiscover_tasks()
 app.conf.beat_schedule = {
     'add-every-hour-parcing': {
         'task': 'polls.tasks.start_mailings',
-        'schedule': crontab(minute='*/60')
+        'schedule': crontab(minute='*/10')
     },
 }
