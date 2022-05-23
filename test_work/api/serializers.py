@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Contact, Mailing, Message
+from mailings.models import Contact, Mailing, Message
 
 
 class ContactSerializer(serializers.ModelSerializer):

@@ -1,7 +1,8 @@
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets
 
-from .models import Contact, Mailing, Message
+from mailings.models import Contact, Mailing, Message
+
 from .serializers import (ContactSerializer, MailinglistSerializer,
                           MailingSerializer, MessageSerializer)
 

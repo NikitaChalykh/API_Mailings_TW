@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Contact(models.Model):
-    number = models.IntegerField()
+    number = models.PositiveIntegerField()
     code = models.CharField(max_length=10)
     tag = models.CharField(null=True, blank=False, max_length=50)
     time_zone = models.CharField(max_length=10)

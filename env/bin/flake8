@@ -1,4 +1,4 @@
-#!/Users/NikitaChalykh/Dev/API_Mailings_TW/env/bin/python
+#!/Users/NikitaChalykh/Dev/API_Mailings_TW/env/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
