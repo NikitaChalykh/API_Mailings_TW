@@ -6,6 +6,8 @@
 
 Проект «Cервис управления рассылками API администрирования и получения статистики» создан в рамках тестового задания для кандидатов-разработчиков. Проект состоит из проектируемого API сервиса для работы с данными клиентов, управления рассылками сообщений. API сервис реализуется на базе фреймворка DRF.
 
+[Ссылка на техническое задание](https://www.craft.do/s/n6OVYFVUpq0o6L)
+
 Системные требования
 ----------
 
@@ -19,7 +21,6 @@
 * Python 3.8
 * Django 3.1
 * Django Rest Framework
-* Pytest
 * PostreSQL
 * Nginx
 * gunicorn
@@ -67,15 +68,11 @@ echo BROKER_URL=redis://redis:6379/0 >> .env
 docker-compose up -d
 ```
 
-5. Запуск миграций, сбор статики, загрузка фикстур и запуск тестов:
+5. Запуск миграций и сбор статики:
 ```bash 
 docker-compose exec web python manage.py migrate
 
 docker-compose exec web python manage.py collectstatic --no-input 
-
-docker-compose exec web python manage.py loaddata fixtures.json
-
-docker-compose exec web python manage.py test 
 ```
 Документация к проекту
 ----------
