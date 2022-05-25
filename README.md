@@ -65,6 +65,8 @@ echo DB_PORT=5432 >> .env
 echo BROKER=redis://redis >> .env
 
 echo BROKER_URL=redis://redis:6379/0 >> .env
+
+echo SENDING_API_TOKEN=****************** >> .env
 ```
 
 4. Установка и запуск приложения в контейнерах:
