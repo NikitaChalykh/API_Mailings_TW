@@ -20,10 +20,3 @@ app.conf.broker_url = os.getenv('BROKER_URL')
 app.conf.timezone = 'Europe/Moscow'
 
 app.autodiscover_tasks()
-
-app.conf.beat_schedule = {
-    'add-every-hour-parcing': {
-        'task': 'polls.tasks.start_mailings',
-        'schedule': crontab(minute='*/10')
-    },
-}

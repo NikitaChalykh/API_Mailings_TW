@@ -11,7 +11,8 @@ services:
   web: 
     build: ../test_work
     restart: always
-    command: gunicorn --bind 0.0.0.0:8000 test_work.wsgi
+    command: >
+      gunicorn --bind 0.0.0.0:8000 test_work.wsgi
     volumes:
       - static_value:/app/static/
     depends_on:
@@ -22,7 +23,10 @@ services:
   celery:
     build: ../test_work
     restart: always
-    command: celery -A test_work worker -B -l INFO
+    command: >
+      celery -A test_work worker -l info
+      && from polls import tasks
+      && tasks.start_mailings.delay()
     depends_on:
       - web
       - redis
