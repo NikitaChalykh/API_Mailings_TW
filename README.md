@@ -29,7 +29,7 @@ API сервис реализуется на базе фреймворка DRF.
 * Nginx
 * gunicorn
 * Docker
-* Selery
+* Сelery
 * Redis
 
 Установка проекта из репозитория (Linux и macOS)
