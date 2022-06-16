@@ -67,7 +67,9 @@ echo DB_PORT=5432 >> .env
 echo BROKER=redis://redis >> .env
 
 echo BROKER_URL=redis://redis:6379/0 >> .env
-
+```
+Токен для сервиса отправки сообщений согласно ТЗ
+```bash 
 echo SENDING_API_TOKEN=****************** >> .env
 ```
 
