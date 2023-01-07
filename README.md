@@ -14,20 +14,20 @@ The API service is implemented on the basis of the DRF framework.
 System requirements
 ----------
 
-*Python 3.6+
-*Docker
+* Python 3.6+
+* Docker
 * Works on Linux, Windows, macOS, BS
 
 Technology stack
 ----------
 
-*Python 3.8
+* Python 3.8
 * Django 3.1
 * Django Rest Framework
 * PostReSQL
-*nginx
+* nginx
 * gunicorn
-*Docker
+* Docker
 * Cellery
 * Redis
 
