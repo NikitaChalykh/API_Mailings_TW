@@ -42,9 +42,9 @@ cd API_Mailings_TW
 
 2. Create and open the ```.env``` file with environment variables:
 ```bash
-cd infrared
+cd infra
 
-touch.env
+touch .env
 ```
 
 3. Fill in the ```.env``` file with environment variables as follows:
