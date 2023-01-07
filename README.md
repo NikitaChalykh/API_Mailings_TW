@@ -65,7 +65,7 @@ echo BROKER=redis://redis >> .env
 
 echo BROKER_URL=redis://redis:6379/0 >> .env
 ```
-Token for the service of sending messages according to the TOR
+Token for the service of sending messages according to the terms of reference
 ```bash
 echo SENDING_API_TOKEN=****************** >> .env
 ```
