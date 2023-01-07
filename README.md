@@ -24,7 +24,7 @@ Technology stack
 * Python 3.8
 * Django 3.1
 * Django Rest Framework
-* PostReSQL
+* PostgreSQL
 * nginx
 * gunicorn
 * Docker
