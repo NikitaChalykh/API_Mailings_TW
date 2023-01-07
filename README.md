@@ -1,54 +1,54 @@
-REST API для системы сервиса рассылок уведомлений
+REST API for notification mailing service system
 =====
 
-Функциональные требования
+Functional requirements
 ----------
-[Ссылка на техническое задание](https://www.craft.do/s/n6OVYFVUpq0o6L)
+[Link to Terms of Reference](https://www.craft.do/s/n6OVYFVUpq0o6L)
 
-Описание проекта
+Project Description
 ----------
-Проект состоит из проектируемого API сервиса для работы с данными клиентов и управления рассылками сообщений.
+The project consists of a projected API service for working with customer data and managing message distributions.
 
-API сервис реализуется на базе фреймворка DRF.
+The API service is implemented on the basis of the DRF framework.
 
-Системные требования
+System requirements
 ----------
 
-* Python 3.6+
-* Docker
+*Python 3.6+
+*Docker
 * Works on Linux, Windows, macOS, BS
 
-Стек технологий
+Technology stack
 ----------
 
-* Python 3.8
+*Python 3.8
 * Django 3.1
 * Django Rest Framework
-* PostreSQL
-* Nginx
+* PostReSQL
+*nginx
 * gunicorn
-* Docker
-* Сelery
+*Docker
+* Cellery
 * Redis
 
-Установка проекта из репозитория (Linux и macOS)
+Installing a project from a repository (Linux and macOS)
 ----------
-1. Клонировать репозиторий и перейти в него в командной строке:
-```bash 
+1. Clone the repository and go to it on the command line:
+```bash
 git clone git@github.com:NikitaChalykh/API_Mailings_TW.git
 
 cd API_Mailings_TW
 ```
 
-2. Cоздать и открыть файл ```.env``` с переменными окружения:
-```bash 
-cd infra
+2. Create and open the ```.env``` file with environment variables:
+```bash
+cd infrared
 
-touch .env
+touch.env
 ```
 
-3. Заполнить ```.env``` файл с переменными окружения по примеру:
-```bash 
+3. Fill in the ```.env``` file with environment variables as follows:
+```bash
 echo DB_ENGINE=django.db.backends.postgresql >> .env
 
 echo DB_NAME=postgres >> .env
@@ -65,25 +65,25 @@ echo BROKER=redis://redis >> .env
 
 echo BROKER_URL=redis://redis:6379/0 >> .env
 ```
-Токен для сервиса отправки сообщений согласно ТЗ
-```bash 
+Token for the service of sending messages according to the TOR
+```bash
 echo SENDING_API_TOKEN=****************** >> .env
 ```
 
-4. Установка и запуск приложения в контейнерах:
-```bash 
+4. Installing and running the application in containers:
+```bash
 docker-compose up -d
 ```
 
-5. Запуск миграций и сбор статики:
-```bash 
+5. Run migrations and collect statics:
+```bash
 docker-compose exec web python manage.py migrate
 
-docker-compose exec web python manage.py collectstatic --no-input 
+docker-compose exec web python manage.py collectstatic --no-input
 ```
-Документация к проекту
+Project Documentation
 ----------
-Документация для API после установки доступна по адресу: 
+Documentation for the API after installation is available at:
 
 ```http://127.0.0.1/redoc/```
 
