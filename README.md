@@ -1,54 +1,36 @@
-REST API for notification mailing service system
-=====
+REST API для системы сервиса рассылок уведомлений
+Функциональные требования
+Ссылка на техническое задание
 
-Functional requirements
-----------
-[Link to Terms of Reference](https://www.craft.do/s/n6OVYFVUpq0o6L)
+Описание проекта
+Проект состоит из проектируемого API сервиса для работы с данными клиентов и управления рассылками сообщений.
 
-Project Description
-----------
-The project consists of a projected API service for working with customer data and managing message distributions.
+API сервис реализуется на базе фреймворка DRF.
 
-The API service is implemented on the basis of the DRF framework.
-
-System requirements
-----------
-
-* Python 3.6+
-* Docker
-* Works on Linux, Windows, macOS, BS
-
-Technology stack
-----------
-
-* Python 3.8
-* Django 3.1
-* Django Rest Framework
-* PostgreSQL
-* nginx
-* gunicorn
-* Docker
-* Cellery
-* Redis
-
-Installing a project from a repository (Linux and macOS)
-----------
-1. Clone the repository and go to it on the command line:
-```bash
+Системные требования
+Python 3.6+
+Docker
+Works on Linux, Windows, macOS, BS
+Стек технологий
+Python 3.8
+Django 3.1
+Django Rest Framework
+PostreSQL
+Nginx
+gunicorn
+Docker
+Сelery
+Redis
+Установка проекта из репозитория (Linux и macOS)
+Клонировать репозиторий и перейти в него в командной строке:
 git clone git@github.com:NikitaChalykh/API_Mailings_TW.git
 
 cd API_Mailings_TW
-```
-
-2. Create and open the ```.env``` file with environment variables:
-```bash
+Cоздать и открыть файл .env с переменными окружения:
 cd infra
 
 touch .env
-```
-
-3. Fill in the ```.env``` file with environment variables as follows:
-```bash
+Заполнить .env файл с переменными окружения по примеру:
 echo DB_ENGINE=django.db.backends.postgresql >> .env
 
 echo DB_NAME=postgres >> .env
@@ -64,27 +46,18 @@ echo DB_PORT=5432 >> .env
 echo BROKER=redis://redis >> .env
 
 echo BROKER_URL=redis://redis:6379/0 >> .env
-```
-Token for the service of sending messages according to the terms of reference
-```bash
+Токен для сервиса отправки сообщений согласно ТЗ
+
 echo SENDING_API_TOKEN=****************** >> .env
-```
-
-4. Installing and running the application in containers:
-```bash
+Установка и запуск приложения в контейнерах:
 docker-compose up -d
-```
-
-5. Run migrations and collect statics:
-```bash
+Запуск миграций и сбор статики:
 docker-compose exec web python manage.py migrate
 
-docker-compose exec web python manage.py collectstatic --no-input
-```
-Project Documentation
-----------
-Documentation for the API after installation is available at:
+docker-compose exec web python manage.py collectstatic --no-input 
+Документация к проекту
+Документация для API после установки доступна по адресу:
 
-```http://127.0.0.1/redoc/```
+http://127.0.0.1/redoc/
 
-```http://127.0.0.1/swagger/```
+http://127.0.0.1/swagger/
