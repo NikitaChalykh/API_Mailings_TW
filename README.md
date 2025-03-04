@@ -52,10 +52,14 @@ docker-compose exec web python manage.py migrate
 docker-compose exec web python manage.py collectstatic --no-input 
 ```
 
-Документация к проекту
+Работа с проектом
 ----------
-Документация для API сервиса после установки: 
+Документация по работе API сервиса:
 
 ```http://127.0.0.1/redoc/```
 
 ```http://127.0.0.1/swagger/```
+
+Админка сервиса:
+
+```http://127.0.0.1/admin/```
