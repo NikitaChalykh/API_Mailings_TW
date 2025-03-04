@@ -29,9 +29,9 @@
 ----------
 1. Клонирование репозитория:
 ```bash 
-git clone git@github.com:NikitaChalykh/mailing_service.git
+git clone git@github.com:NikitaChalykh/backend.git
 
-cd mailing_service # Переходим в директорию с проектом
+cd backend # Переходим в директорию с проектом
 ```
 
 2. Создайте файл ```.env``` используя ```env.example``` в качестве шаблона в папке infra

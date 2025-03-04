@@ -42,7 +42,7 @@ MIDDLEWARE = [
 ]
 
 
-ROOT_URLCONF = 'mailing_service.urls'
+ROOT_URLCONF = 'backend.urls'
 
 
 TEMPLATES = [
@@ -62,7 +62,7 @@ TEMPLATES = [
 ]
 
 
-WSGI_APPLICATION = 'mailing_service.wsgi.application'
+WSGI_APPLICATION = 'backend.wsgi.application'
 
 
 DATABASES = {
