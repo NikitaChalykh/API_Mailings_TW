@@ -9,10 +9,10 @@ services:
       - ./.env
   
   web: 
-    build: ../test_work
+    build: ../mailing_service
     restart: always
     command: >
-      gunicorn --bind 0.0.0.0:8000 test_work.wsgi
+      gunicorn --bind 0.0.0.0:8000 mailing_service.wsgi
     volumes:
       - static_value:/app/static/
     depends_on:
@@ -21,10 +21,10 @@ services:
       - ./.env
 
   celery:
-    build: ../test_work
+    build: ../mailing_service
     restart: always
     command: >
-      celery -A test_work worker -l info
+      celery -A mailing_service worker -l info
       && from polls import tasks
       && tasks.start_mailings.delay()
     depends_on:

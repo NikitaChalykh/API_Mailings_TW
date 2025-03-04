@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'test_work.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mailing_service.settings')
 
 app = Celery(
     'backend',
