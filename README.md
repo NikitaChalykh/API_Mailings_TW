@@ -19,7 +19,7 @@
 Стек технологий
 ----------
 
-* Python 3.8
+* Python 3.8+
 * Django 3.1
 * Django Rest Framework
 * PostreSQL
@@ -45,11 +45,13 @@ cd backend # Переходим в директорию с проектом
 docker-compose up -d
 ```
 
-4. Запуск миграций и сбор статики:
+4. Запуск миграций, сбор статики и создание суперпользователя:
 ```bash 
 docker-compose exec web python manage.py migrate
 
-docker-compose exec web python manage.py collectstatic --no-input 
+docker-compose exec web python manage.py collectstatic --no-input
+
+docker-compose exec web python manage.py
 ```
 
 Работа с проектом
