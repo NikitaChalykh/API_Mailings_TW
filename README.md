@@ -36,7 +36,7 @@ git clone git@github.com:NikitaChalykh/mailing_service.git
 cd mailing_service # Переходим в директорию с проектом
 ```
 
-2. Создайте файл .env используя .env.example в качестве шаблона в папке infra
+2. Создайте файл ```.env``` используя ```env.example``` в качестве шаблона в папке infra
 
 3. Установка и запуск сервиса в контейнере:
 ```bash 
